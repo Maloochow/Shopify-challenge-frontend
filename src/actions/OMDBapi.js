@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const rootURL = 'http://www.omdbapi.com/?apikey=9fb58b5c'
+const rootURL = 'https://www.omdbapi.com/?apikey=9fb58b5c'
 
 export const searchTitle = (title) => {
     return axios.get(rootURL + "&s=" + title)
