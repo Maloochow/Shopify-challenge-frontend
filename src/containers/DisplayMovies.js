@@ -1,12 +1,13 @@
 import React from 'react'
 import DisplayMovie from '../components/DisplayMovie'
+import { List, Typography, Container, Card, CardContent, CardHeader } from '@material-ui/core'
 
 const DisplayMovies = ({movies, nominees, addNominee, searchWord}) => {
     const showMovies = () => {
         if (movies) {
             return movies.map(movie => {
                 let isNominated = nominees.find(m => m.imdbID === movie.imdbID) || nominees.length >= 5 ? true : false
-                return <DisplayMovie movie={movie} handleClick={addNominee} disabled={isNominated} buttonText="search" key={movie.imdbID}/>
+                return <DisplayMovie movie={movie} handleClick={addNominee} disabled={isNominated} buttonText="nominate" key={movie.imdbID}/>
             })
         } else {
             return <p>No result from the title</p>
@@ -15,18 +16,23 @@ const DisplayMovies = ({movies, nominees, addNominee, searchWord}) => {
 
     const showTitle = () => {
         if (searchWord) {
-            return <h3>Results for "{searchWord}"</h3>
+            return <Typography variant="h3">Results for "{searchWord}"</Typography>
+        } else {
+            return <Typography variant="h5">Search for your movie</Typography>
         }
     }
     
     
     return (
-        <div>
-            {showTitle()}
-        <ul>
-            {showMovies()}
-        </ul>
-        </div>
+        <Container >
+            <Card style={{minHeight: 500 }}>
+                <CardHeader 
+                    title={showTitle()} />
+            <CardContent>
+            <List>{showMovies()}</List>
+            </CardContent>
+            </Card>
+        </Container>
     )
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import DisplayMovie from '../components/DisplayMovie'
 import { generatePageLink } from '../actions/GeneratePageLink'
 import { Link } from 'react-router-dom'
+import { List, Paper, Typography, Container, Card, CardContent, CardHeader, CardActions, IconButton } from '@material-ui/core'
+import ShareIcon from '@material-ui/icons/Share';
 
 const DisplayNominees = ({nominees, removeNominee}) => {
 
@@ -12,11 +14,21 @@ const DisplayNominees = ({nominees, removeNominee}) => {
     }
 
     return (
-     <div>
-         <Link to={`/page/${generatePageLink(nominees)}`}>Share</Link>
-         <h3>Nominations</h3>
-         <ul>{showNominees()}</ul>
-     </div>
+     <Container>
+        <Card style={{height: 500 }}>
+            <CardHeader 
+                action={
+                    <IconButton href={`/page/${generatePageLink(nominees)}`}>
+                    <ShareIcon />
+                {/* <Link to={`/page/${generatePageLink(nominees)}`}>Share</Link> */}
+                    </IconButton>
+                }
+                title="Nominations"/>
+        <CardContent>
+         <List>{showNominees()}</List>
+        </CardContent>
+        </Card>
+     </Container>
  )   
 }
 

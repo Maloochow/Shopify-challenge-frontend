@@ -5,7 +5,8 @@ import DisplayMovies from './DisplayMovies';
 import DisplayNominees from './DisplayNominees';
 import Banner from '../components/Banner';
 import ls from 'local-storage'
-// import bootstrap from "bootstrap";
+import { Paper, Typography, Container, Grid } from '@material-ui/core'
+import { grey } from '@material-ui/core/colors';
 
 function Home() {
   const [movies, setMovies] = useState([])
@@ -38,15 +39,28 @@ function Home() {
   }
 
   return (
-    <div>
-     <div class="container justify-content-center">
-      <h3>The Shoppies</h3>
+    
+    <Container >
+     
+      <Typography variant="h3" align='center' style={{padding: 30}}>The Shoppies</Typography>
       <Banner show={nominees.length >= 5}/>
       <SearchBar handleSearch={handleSearch}/>
-      <DisplayMovies movies={movies} nominees={nominees} addNominee={addNominee} searchWord={searchWord}/>
-      <DisplayNominees nominees={nominees} removeNominee={removeNominee} />
-     </div>
-    </div>
+
+      <section style={{paddingBottom: 40}}></section>
+
+    <Grid container spacing={0}>
+      <Grid item xs={6}>
+        <DisplayMovies movies={movies} nominees={nominees} addNominee={addNominee} searchWord={searchWord}/>
+      </Grid>
+
+      <Grid item xs={6}>
+        <DisplayNominees nominees={nominees} removeNominee={removeNominee} />
+      </Grid>
+    </Grid>
+    
+    <section style={{paddingBottom: 40}}></section>
+    </Container>
+    
 
     
   );
