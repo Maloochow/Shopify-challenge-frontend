@@ -1,8 +1,8 @@
 import React from 'react'
 import DisplayMovie from '../components/DisplayMovie'
 import { generatePageLink } from '../actions/GeneratePageLink'
-import { Link } from 'react-router-dom'
-import { List, Paper, Typography, Container, Card, CardContent, CardHeader, CardActions, IconButton } from '@material-ui/core'
+// import { Link } from 'react-router-dom'
+import { List, Container, Card, CardContent, CardHeader, IconButton } from '@material-ui/core'
 import ShareIcon from '@material-ui/icons/Share';
 
 const DisplayNominees = ({nominees, removeNominee}) => {

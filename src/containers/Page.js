@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import PageNominees from './PageNominees'
+import { Container, Card, CardHeader } from '@material-ui/core'
 
 const Page = () => {
     
@@ -9,12 +10,12 @@ const Page = () => {
 
     
     return (
-        <div>
-            <h3>Nominations</h3>
-            <ul>
+        <Container style={{padding: 30}} maxWidth="sm">
+            <Card style={{padding: 30}}>
+            <CardHeader title="Nominations" />
             <PageNominees movieIDs={movieIDs} />
-            </ul>
-        </div>
+            </Card>
+        </Container>
     )
 }
 

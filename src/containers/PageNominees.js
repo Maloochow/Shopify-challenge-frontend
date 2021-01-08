@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import MovieItem from '../components/MovieItem'
 import { searchID } from '../actions/OMDBapi'
+import { ListItem, List, ListItemIcon } from '@material-ui/core'
+import TurnedInIcon from '@material-ui/icons/TurnedIn';
 
 const PageNominees = ({ movieIDs}) => {
     const [movies, setMovies] = useState([])
@@ -14,24 +16,27 @@ const PageNominees = ({ movieIDs}) => {
 
         fetchMovies()
         .then( array => {
-            console.log(array)
             setMovies(array)
         })
     }, [movieIDs])
     
     const showNominees = () => {
         return movies.map(movie => {
-            console.log(movie)
             return (
-            <li><MovieItem title={movie.Title} year={movie.Year} key={movie.imdbID}/></li>
+            <ListItem>
+                <ListItemIcon edge="front">
+                        <TurnedInIcon fontSize="small"/>                        
+                </ListItemIcon>
+                <MovieItem title={movie.Title} year={movie.Year} key={movie.imdbID}/>
+            </ListItem>
             )
         })
     }
 
     return (
-        <div>
+        <List>
             {showNominees()}
-        </div>
+        </List>
     )
 }
 

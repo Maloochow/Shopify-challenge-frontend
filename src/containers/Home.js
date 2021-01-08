@@ -5,8 +5,7 @@ import DisplayMovies from './DisplayMovies';
 import DisplayNominees from './DisplayNominees';
 import Banner from '../components/Banner';
 import ls from 'local-storage'
-import { Paper, Typography, Container, Grid } from '@material-ui/core'
-import { grey } from '@material-ui/core/colors';
+import { Typography, Container, Grid } from '@material-ui/core'
 
 function Home() {
   const [movies, setMovies] = useState([])
@@ -14,13 +13,10 @@ function Home() {
   const [searchWord, setSearchWord] = useState("")
 
   const handleSearch = (title) => {
-    console.log("entered handleSearch")
     setSearchWord(title)
     searchTitle(title)
       .then(movieArray => {
-        console.log(movieArray)
         setMovies(movieArray)
-        console.log(movies)
       })
   }
 
