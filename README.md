@@ -2,6 +2,7 @@
 
 This project was created for the Shopify Front-end Internship Application.
 [Visit the hosted app through this link](https://tranquil-island-31035.herokuapp.com)
+[video walkthrough](https://media.giphy.com/media/nt4lpjAuLYzu4Ho4bX/giphy.gif)
 
 ## Available Scripts
 
@@ -10,10 +11,10 @@ To test this project in the development mode, please clone this repo and run:
 ### `npm install`
 
 Install all the dependencies in this repo. The important ones are:
-`axios` for fetching from the OMDB Api;
-`local-storage` for saving the list of nominees when refresh the page or open the page in a new tab;
-`react-router-dom` for creating a sharable link for the list of nominees
-`@material-ui/core` for the css library
+- `axios` for fetching from the OMDB Api;
+- `local-storage` for saving the list of nominees when refresh the page or open the page in a new tab;
+- `react-router-dom` for creating a sharable link for the list of nominees
+- `@material-ui/core` for the css library
 
 ### `yarn start`
 
