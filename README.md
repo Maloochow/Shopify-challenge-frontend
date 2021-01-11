@@ -1,10 +1,19 @@
-# Getting Started with Create React App
+# Notes to Consider
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created for the Shopify Front-end Internship Application.
+[Visit the hosted app through this link](https://tranquil-island-31035.herokuapp.com)
 
 ## Available Scripts
 
-In the project directory, you can run:
+To test this project in the development mode, please clone this repo and run:
+
+### `npm install`
+
+Install all the dependencies in this repo. The important ones are:
+`axios` for fetching from the OMDB Api;
+`local-storage` for saving the list of nominees when refresh the page or open the page in a new tab;
+`react-router-dom` for creating a sharable link for the list of nominees
+`@material-ui/core` for the css library
 
 ### `yarn start`
 
@@ -14,57 +23,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+## Featured Functions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Apart from the technical requriements, I complemented with the ability to save the nomination list and create a sharable list for the nominations.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This app uses React.js Hooks to manage the state. Because the functions are quite simple, Redux was avoided to reduce unnecessary complexity. (For example of a Redux app, [please visit](https://github.com/Maloochow/movie_swipe))
+- For the search bar, to save the step of clicking a submit button, a timeout function was setup to detect when the user stops typing. When the user stops typing, the input value was sent in a fetch request to the OMDB api.
+- The localStorage on browser is utilized to store the details of nominated moviea.
+- To generate a sharable link, the app uses a serializer method to store the `imdbID` of each nominated movie as parameters in the generated URL.
+- `useEffect` was used to handle the fetches for updating the content of the sharable links.
+- Style-wise, this app uses material-ui library for the responsive UI.
