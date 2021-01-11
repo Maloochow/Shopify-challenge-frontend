@@ -2,7 +2,7 @@
 
 This project was created for the Shopify Front-end Internship Application.
 [Visit the hosted app through this link](https://tranquil-island-31035.herokuapp.com)
-[video walkthrough](https://media.giphy.com/media/nt4lpjAuLYzu4Ho4bX/giphy.gif)
+![video walkthrough](public/demo.gif)
 
 ## Available Scripts
 
